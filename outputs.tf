@@ -1,7 +1,3 @@
-output "vpc_route_server_peers_id" {
-  description = "Map of id values across all vpc_route_server_peers, keyed the same as var.vpc_route_server_peers"
-  value       = { for k, v in aws_vpc_route_server_peer.vpc_route_server_peers : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "vpc_route_server_peers_arn" {
   description = "Map of arn values across all vpc_route_server_peers, keyed the same as var.vpc_route_server_peers"
   value       = { for k, v in aws_vpc_route_server_peer.vpc_route_server_peers : k => v.arn if v.arn != null && length(v.arn) > 0 }
